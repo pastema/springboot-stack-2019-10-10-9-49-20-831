@@ -1,10 +1,7 @@
 package com.tw.apistackbase.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.logging.Logger;
 
@@ -20,8 +17,14 @@ public class HelloResource {
     @GetMapping(path = "/{userName}", produces = {"application/json"})
     public ResponseEntity<String> getAll(@PathVariable String userName) {
 
-        return ResponseEntity.ok("Hello:" + userName);
+        return ResponseEntity.ok("Hello: " + userName);
     }
 
 
+
+    @PostMapping("add-Employee")
+    public ResponseEntity<String> addEmployee(@PathVariable String userName) {
+
+        return ResponseEntity.ok("Hello: " + userName);
+    }
 }
